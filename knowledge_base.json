@@ -1,0 +1,50 @@
+[
+  {
+    "id": "bloat_cattle",
+    "animal": "cattle",
+    "keywords": ["bloating", "swollen stomach", "distended belly", "not eating", "kicking at belly"],
+    "condition": "Bloat",
+    "advice": "Bloat is a buildup of gas in the stomach, often from eating too much fresh legume feed. Keep the animal standing and walking if possible. This can become an emergency quickly.",
+    "emergency": true
+  },
+  {
+    "id": "mastitis_cattle",
+    "animal": "cattle",
+    "keywords": ["swollen udder", "hot udder", "hard udder", "milk changes", "clumpy milk", "blood in milk"],
+    "condition": "Mastitis",
+    "advice": "Mastitis is an udder infection. Gently milk out the affected quarter and keep the area clean. Recovery is much better with early treatment.",
+    "emergency": false
+  },
+  {
+    "id": "foot_rot_cattle",
+    "animal": "cattle",
+    "keywords": ["limping", "swollen foot", "won't put weight on leg", "foul smell foot"],
+    "condition": "Foot rot",
+    "advice": "Foot rot is a bacterial infection between the toes, common in wet or muddy conditions. Move the animal to a dry area and clean the foot if possible.",
+    "emergency": false
+  },
+  {
+    "id": "newcastle_poultry",
+    "animal": "poultry",
+    "keywords": ["twisted neck", "gasping", "coughing", "diarrhea green", "not eating", "sudden death in flock"],
+    "condition": "Newcastle disease",
+    "advice": "This is a highly contagious viral disease with no treatment. Isolate sick birds immediately from the rest of the flock to limit spread.",
+    "emergency": true
+  },
+  {
+    "id": "bloat_goat",
+    "animal": "goat",
+    "keywords": ["swollen belly", "not eating", "grinding teeth", "lying down repeatedly"],
+    "condition": "Bloat",
+    "advice": "Similar to cattle bloat — gas buildup from feed changes. Encourage movement and monitor closely; this can escalate fast.",
+    "emergency": true
+  },
+  {
+    "id": "diarrhea_general",
+    "animal": "general",
+    "keywords": ["diarrhea", "loose stool", "watery feces", "dehydration"],
+    "condition": "Diarrhea / possible parasites or infection",
+    "advice": "Ensure the animal has access to clean water to prevent dehydration. Persistent diarrhea over 2 days needs a vet check for parasites or infection.",
+    "emergency": false
+  }
+]
