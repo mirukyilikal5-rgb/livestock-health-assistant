@@ -2,7 +2,7 @@
   {
     "id": "bloat_cattle",
     "animal": "cattle",
-    "keywords": ["bloating", "swollen stomach", "distended belly", "not eating", "kicking at belly"],
+    "keywords": ["bloating", "swollen stomach", "distended belly", "not eating", "kicking at belly", "swollen tummy", "big belly", "swollen abdomen"],
     "condition": "Bloat",
     "advice": "Bloat is a buildup of gas in the stomach, often from eating too much fresh legume feed. Keep the animal standing and walking if possible. This can become an emergency quickly.",
     "emergency": true
@@ -10,7 +10,7 @@
   {
     "id": "mastitis_cattle",
     "animal": "cattle",
-    "keywords": ["swollen udder", "hot udder", "hard udder", "milk changes", "clumpy milk", "blood in milk"],
+    "keywords": ["swollen udder", "hot udder", "hard udder", "milk changes", "clumpy milk", "blood in milk", "painful udder", "red udder"],
     "condition": "Mastitis",
     "advice": "Mastitis is an udder infection. Gently milk out the affected quarter and keep the area clean. Recovery is much better with early treatment.",
     "emergency": false
@@ -18,7 +18,7 @@
   {
     "id": "foot_rot_cattle",
     "animal": "cattle",
-    "keywords": ["limping", "swollen foot", "won't put weight on leg", "foul smell foot"],
+    "keywords": ["limping", "swollen foot", "won't put weight on leg", "foul smell foot", "lame", "bad foot smell", "sore foot"],
     "condition": "Foot rot",
     "advice": "Foot rot is a bacterial infection between the toes, common in wet or muddy conditions. Move the animal to a dry area and clean the foot if possible.",
     "emergency": false
@@ -26,7 +26,7 @@
   {
     "id": "newcastle_poultry",
     "animal": "poultry",
-    "keywords": ["twisted neck", "gasping", "coughing", "diarrhea green", "not eating", "sudden death in flock"],
+    "keywords": ["twisted neck", "gasping", "coughing", "diarrhea green", "not eating", "sudden death in flock", "breathing hard", "wheezing", "green droppings"],
     "condition": "Newcastle disease",
     "advice": "This is a highly contagious viral disease with no treatment. Isolate sick birds immediately from the rest of the flock to limit spread.",
     "emergency": true
@@ -34,7 +34,7 @@
   {
     "id": "bloat_goat",
     "animal": "goat",
-    "keywords": ["swollen belly", "not eating", "grinding teeth", "lying down repeatedly"],
+    "keywords": ["swollen belly", "not eating", "grinding teeth", "lying down repeatedly", "swollen tummy", "big belly"],
     "condition": "Bloat",
     "advice": "Similar to cattle bloat — gas buildup from feed changes. Encourage movement and monitor closely; this can escalate fast.",
     "emergency": true
@@ -42,9 +42,57 @@
   {
     "id": "diarrhea_general",
     "animal": "general",
-    "keywords": ["diarrhea", "loose stool", "watery feces", "dehydration"],
+    "keywords": ["diarrhea", "loose stool", "watery feces", "dehydration", "watery diarrhea", "loose droppings", "runny stool"],
     "condition": "Diarrhea / possible parasites or infection",
     "advice": "Ensure the animal has access to clean water to prevent dehydration. Persistent diarrhea over 2 days needs a vet check for parasites or infection.",
+    "emergency": false
+  },
+  {
+    "id": "worms_general",
+    "animal": "general",
+    "keywords": ["weight loss", "pale gums", "rough coat", "pot belly", "weak", "thin despite eating", "anemia"],
+    "condition": "Internal parasites (worms)",
+    "advice": "These are classic signs of worm burden. Pale gums especially need attention soon, as heavy worm loads can be dangerous. A dewormer and vet check are recommended.",
+    "emergency": false
+  },
+  {
+    "id": "pneumonia_general",
+    "animal": "general",
+    "keywords": ["coughing", "fast breathing", "nasal discharge", "fever", "lethargic", "not moving much", "runny nose", "labored breathing"],
+    "condition": "Pneumonia / respiratory infection",
+    "advice": "Fast or labored breathing combined with discharge and lethargy needs prompt attention — respiratory infections can worsen quickly, especially in young animals.",
+    "emergency": true
+  },
+  {
+    "id": "eye_infection_general",
+    "animal": "general",
+    "keywords": ["watery eyes", "cloudy eye", "swollen eye", "eye discharge", "closed eye", "red eye"],
+    "condition": "Eye infection (e.g. pink eye)",
+    "advice": "Keep the animal away from dust and flies, which worsen eye infections. Gently clean discharge with clean water. If cloudiness affects vision, see a vet soon.",
+    "emergency": false
+  },
+  {
+    "id": "difficulty_birthing",
+    "animal": "general",
+    "keywords": ["straining to give birth", "stuck labor", "difficult birth", "not progressing labor", "prolonged labor"],
+    "condition": "Dystocia (birthing difficulty)",
+    "advice": "A prolonged or stuck birth is dangerous for both mother and offspring and needs immediate hands-on help — this is not something to wait out.",
+    "emergency": true
+  },
+  {
+    "id": "poultry_egg_drop",
+    "animal": "poultry",
+    "keywords": ["fewer eggs", "stopped laying", "soft shell eggs", "no eggs"],
+    "condition": "Egg production drop (nutrition or stress related)",
+    "advice": "Sudden drops in egg laying are often linked to diet, heat stress, or lighting changes. Check feed quality and water access first.",
+    "emergency": false
+  },
+  {
+    "id": "tick_infestation",
+    "animal": "general",
+    "keywords": ["ticks", "skin irritation", "scratching", "hair loss patches", "biting insects"],
+    "condition": "External parasites (ticks/mites)",
+    "advice": "Visible ticks or mite-related skin irritation should be treated promptly, as they can spread disease and cause anemia in heavy infestations.",
     "emergency": false
   }
 ]
