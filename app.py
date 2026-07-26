@@ -45,10 +45,79 @@ st.markdown("""
     .reminder-overdue { border-left: 4px solid #D64545; background-color: #FDECEC; }
     .reminder-soon { border-left: 4px solid #E8A33D; background-color: #FFF6E5; }
     .reminder-ok { border-left: 4px solid #02C39A; }
-    /* Sidebar nav styling */
-    div[data-testid="stSidebar"] .stRadio > label { font-weight: 600; }
-    div[data-testid="stSidebar"] .stRadio [role="radiogroup"] label {
-        padding: 0.5rem 0.7rem; border-radius: 8px; margin-bottom: 0.2rem;
+    /* Sidebar: white background, clean nav list like a modern chat app */
+    section[data-testid="stSidebar"], div[data-testid="stSidebar"] {
+        background-color: #FAFBFB !important;
+        border-right: 1px solid #E7ECEB;
+    }
+    /* Flat, list-style buttons - no box, no border, just a hover highlight */
+    section[data-testid="stSidebar"] button,
+    div[data-testid="stSidebar"] button {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+        color: #2B3A38 !important;
+        font-weight: 400 !important;
+        font-size: 0.92rem !important;
+        padding: 0.5rem 0.7rem !important;
+        border-radius: 8px !important;
+        margin: 0.05rem 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+    }
+    section[data-testid="stSidebar"] button > div,
+    div[data-testid="stSidebar"] button > div,
+    section[data-testid="stSidebar"] button p,
+    div[data-testid="stSidebar"] button p {
+        text-align: left !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+    }
+    section[data-testid="stSidebar"] button:hover,
+    div[data-testid="stSidebar"] button:hover {
+        background-color: #EDEFEF !important;
+        color: #1A2E2A !important;
+    }
+    section[data-testid="stSidebar"] button:focus,
+    div[data-testid="stSidebar"] button:focus,
+    section[data-testid="stSidebar"] button:active,
+    div[data-testid="stSidebar"] button:active {
+        box-shadow: none !important;
+        outline: none !important;
+        border: none !important;
+    }
+    /* Active nav item / active chat - a static highlighted row (not a button) */
+    .nav-active {
+        background-color: #E4F0EF;
+        color: #028090;
+        font-weight: 600;
+        padding: 0.5rem 0.7rem;
+        border-radius: 8px;
+        margin: 0.05rem 0;
+        font-size: 0.92rem;
+    }
+    .recent-active {
+        background-color: #E4F0EF;
+        color: #028090;
+        font-weight: 500;
+        padding: 0.5rem 0.7rem;
+        border-radius: 8px;
+        margin: 0.05rem 0;
+        font-size: 0.87rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .sidebar-section-label {
+        font-size: 0.78rem;
+        color: #8A9694;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        margin: 1rem 0 0.3rem 0.5rem;
+        text-transform: uppercase;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -86,19 +155,66 @@ def add_message_to_current_session(role, text, animal_type=None):
     save_sessions(st.session_state.sessions)
 
 # ============================== SIDEBAR NAV ==============================
-st.sidebar.markdown("### 🐄 Livestock Health Assistant")
-st.sidebar.caption("የከብት ጤና ረዳት")
-st.sidebar.markdown("---")
+st.sidebar.markdown(
+    '<div style="font-weight:700; font-size:1.05rem; padding:0.3rem 0.5rem;">🐄 Livestock Health Assistant</div>'
+    '<div style="color:#8A9694; font-size:0.8rem; padding:0 0.5rem 0.5rem 0.5rem;">የከብት ጤና ረዳት</div>',
+    unsafe_allow_html=True,
+)
 
-# --- Recent chats list (always visible, click to jump back into a past conversation) ---
-# NOTE: this section must come BEFORE the Menu radio below, since Streamlit
-# won't allow changing a widget's value in the same run after it's created.
-if st.sidebar.button("➕ New chat", use_container_width=True):
+if "current_session_id" not in st.session_state:
     st.session_state.current_session_id = None
-    st.session_state.nav_page = "💬 Chat"
+
+MENU_OPTIONS = [
+    ("💬", "Chat"),
+    ("📚", "Disease Library"),
+    ("🚨", "Emergency Guide"),
+    ("📅", "Vaccination Reminders"),
+]
+if "current_page" not in st.session_state:
+    st.session_state.current_page = MENU_OPTIONS[0][1]
+
+# --- New chat (top, like ChatGPT's "New chat") ---
+if st.sidebar.button("📝  New chat", use_container_width=True):
+    st.session_state.current_session_id = None
+    st.session_state.current_page = "Chat"
     st.rerun()
 
-st.sidebar.caption("Recent")
+st.sidebar.markdown('<div style="height:0.4rem;"></div>', unsafe_allow_html=True)
+
+# --- Main nav: active item shown as a static highlighted row, others as flat buttons ---
+for icon, label in MENU_OPTIONS:
+    if st.session_state.current_page == label:
+        st.sidebar.markdown(f'<div class="nav-active">{icon}&nbsp;&nbsp;{label}</div>', unsafe_allow_html=True)
+    else:
+        if st.sidebar.button(f"{icon}  {label}", key=f"menu_{label}", use_container_width=True):
+            st.session_state.current_page = label
+            st.rerun()
+
+page = st.session_state.current_page
+
+# --- Context-specific settings (only relevant on the Chat page) ---
+if page == "Chat":
+    st.sidebar.markdown('<div class="sidebar-section-label">Animal Details / የእንስሳ ዝርዝር</div>', unsafe_allow_html=True)
+    animal_type = st.sidebar.selectbox(
+        "What animal is this about? / የትኛው እንስሳ ነው?",
+        ["Cattle (ላም)", "Goat (ፍየል)", "Poultry (ዶሮ)", "Other / Not sure (ሌላ)"],
+        label_visibility="collapsed",
+    )
+    response_language = st.sidebar.radio(
+        "🌐 Response language / የምላሽ ቋንቋ", ["English", "Amharic (አማርኛ)"],
+    )
+    language_code = "Amharic" if response_language.startswith("Amharic") else "English"
+
+    if st.session_state.current_session_id and st.sidebar.button("🗑️  Delete this chat", use_container_width=True):
+        del st.session_state.sessions[st.session_state.current_session_id]
+        save_sessions(st.session_state.sessions)
+        st.session_state.current_session_id = None
+        st.rerun()
+
+    st.sidebar.markdown("---")
+
+# --- Recent chats list ---
+st.sidebar.markdown('<div class="sidebar-section-label">Recent</div>', unsafe_allow_html=True)
 sorted_sessions = sorted(
     st.session_state.sessions.items(),
     key=lambda kv: kv[1]["timestamp"],
@@ -109,45 +225,15 @@ if not sorted_sessions:
 else:
     for sid, session in sorted_sessions[:12]:  # show most recent 12
         is_active = sid == st.session_state.current_session_id
-        label = ("🟢 " if is_active else "") + session["title"]
-        if st.sidebar.button(label, key=f"recent_{sid}", use_container_width=True):
-            st.session_state.current_session_id = sid
-            st.session_state.nav_page = "💬 Chat"
-            st.rerun()
+        if is_active:
+            st.sidebar.markdown(f'<div class="recent-active">{session["title"]}</div>', unsafe_allow_html=True)
+        else:
+            if st.sidebar.button(session["title"], key=f"recent_{sid}", use_container_width=True):
+                st.session_state.current_session_id = sid
+                st.session_state.current_page = "Chat"
+                st.rerun()
 
 st.sidebar.markdown("---")
-
-page = st.sidebar.radio(
-    "Menu",
-    [
-        "💬 Chat",
-        "📚 Disease Library",
-        "🚨 Emergency Guide",
-        "📅 Vaccination Reminders",
-    ],
-    label_visibility="collapsed",
-    key="nav_page",
-)
-
-st.sidebar.markdown("---")
-
-# --- Context-specific settings (only relevant on the Chat page) ---
-if page == "💬 Chat":
-    st.sidebar.markdown("**🐾 Animal Details / የእንስሳ ዝርዝር**")
-    animal_type = st.sidebar.selectbox(
-        "What animal is this about? / የትኛው እንስሳ ነው?",
-        ["Cattle (ላም)", "Goat (ፍየል)", "Poultry (ዶሮ)", "Other / Not sure (ሌላ)"],
-    )
-    response_language = st.sidebar.radio("🌐 Response language / የምላሽ ቋንቋ", ["English", "Amharic (አማርኛ)"])
-    language_code = "Amharic" if response_language.startswith("Amharic") else "English"
-
-    if st.session_state.current_session_id and st.sidebar.button("🗑️ Delete this chat"):
-        del st.session_state.sessions[st.session_state.current_session_id]
-        save_sessions(st.session_state.sessions)
-        st.session_state.current_session_id = None
-        st.rerun()
-
-    st.sidebar.markdown("---")
 
 st.sidebar.markdown(
     """
@@ -168,7 +254,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ------------------------------ CHAT PAGE ------------------------------
-if page == "💬 Chat":
+if page == "Chat":
     QUICK_SYMPTOMS = [
         ("🫃 Swollen belly", "belly is swollen and it won't eat"),
         ("🦵 Limping", "limping and bad smell from its foot"),
@@ -211,7 +297,7 @@ if page == "💬 Chat":
         add_message_to_current_session("assistant", answer)
 
 # -------------------------- DISEASE LIBRARY PAGE --------------------------
-elif page == "📚 Disease Library":
+elif page == "Disease Library":
     st.subheader("📚 Disease Library / የበሽታ ማውጫ")
     st.caption("Browse all conditions currently in the knowledge base.")
 
@@ -235,7 +321,7 @@ elif page == "📚 Disease Library":
         """, unsafe_allow_html=True)
 
 # -------------------------- EMERGENCY GUIDE PAGE --------------------------
-elif page == "🚨 Emergency Guide":
+elif page == "Emergency Guide":
     st.subheader("🚨 Emergency Guide / የአደጋ መመሪያ")
     st.caption("These conditions need urgent veterinary attention. Learn to recognize them.")
 
@@ -257,7 +343,7 @@ elif page == "🚨 Emergency Guide":
     )
 
 # ------------------------ VACCINATION REMINDERS PAGE ------------------------
-elif page == "📅 Vaccination Reminders":
+elif page == "Vaccination Reminders":
     st.subheader("📅 Vaccination Reminders / የክትባት ማስታወሻ")
     st.caption("Track upcoming vaccinations for your animals. Saved locally on this device.")
 
