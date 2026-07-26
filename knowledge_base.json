@@ -2,97 +2,273 @@
   {
     "id": "bloat_cattle",
     "animal": "cattle",
-    "keywords": ["bloating", "swollen stomach", "distended belly", "not eating", "kicking at belly", "swollen tummy", "big belly", "swollen abdomen"],
+    "keywords": [
+      "bloating",
+      "swollen stomach",
+      "distended belly",
+      "kicking at belly",
+      "swollen tummy",
+      "big belly",
+      "swollen abdomen"
+    ],
+    "keywords_am": [
+      "ሆድ አበጠ",
+      "ሆድ ገፋ",
+      "ትልቅ ሆድ"
+    ],
     "condition": "Bloat",
+    "condition_am": "እብጠት (ብሎት)",
     "advice": "Bloat is a buildup of gas in the stomach, often from eating too much fresh legume feed. Keep the animal standing and walking if possible. This can become an emergency quickly.",
+    "advice_am": "እብጠት በተለምዶ ትኩስ የቤጓ ዓይነት ምግብ በብዛት ከመመገብ የሚመጣ የጋዝ መከማቸት ነው። እንስሳው ቆሞ እንዲንቀሳቀስ ያድርጉ እና በተቻለ ፍጥነት የእንስሳት ሐኪም ያማክሩ፣ ሁኔታው በፍጥነት ወደ አደጋ ሊቀየር ይችላል።",
     "emergency": true
   },
   {
     "id": "mastitis_cattle",
     "animal": "cattle",
-    "keywords": ["swollen udder", "hot udder", "hard udder", "milk changes", "clumpy milk", "blood in milk", "painful udder", "red udder"],
+    "keywords": [
+      "swollen udder",
+      "hot udder",
+      "hard udder",
+      "milk changes",
+      "clumpy milk",
+      "blood in milk",
+      "painful udder",
+      "red udder"
+    ],
+    "keywords_am": [
+      "ጡት አበጠ",
+      "ጡት ሞቀ",
+      "ወተት ረገጠ",
+      "ቀይ ጡት"
+    ],
     "condition": "Mastitis",
+    "condition_am": "የጡት እጢ በሽታ (ማስቲትስ)",
     "advice": "Mastitis is an udder infection. Gently milk out the affected quarter and keep the area clean. Recovery is much better with early treatment.",
+    "advice_am": "ማስቲትስ በጡት ውስጥ የሚከሰት ኢንፌክሽን ነው። የተጎዳውን ክፍል በቀስታ ያልቡ እና አካባቢውን ንጹህ ያድርጉ፤ ቀደም ብሎ ማከም ማገገሚያውን ያፋጥናል።",
     "emergency": false
   },
   {
     "id": "foot_rot_cattle",
     "animal": "cattle",
-    "keywords": ["limping", "swollen foot", "won't put weight on leg", "foul smell foot", "lame", "bad foot smell", "sore foot"],
+    "keywords": [
+      "limping",
+      "swollen foot",
+      "won't put weight on leg",
+      "foul smell foot",
+      "lame",
+      "bad foot smell",
+      "sore foot"
+    ],
+    "keywords_am": [
+      "አነከሰ",
+      "እግር አበጠ",
+      "እግር ሽታ",
+      "ደካማ እግር"
+    ],
     "condition": "Foot rot",
+    "condition_am": "የእግር መበስበስ",
     "advice": "Foot rot is a bacterial infection between the toes, common in wet or muddy conditions. Move the animal to a dry area and clean the foot if possible.",
+    "advice_am": "የእግር መበስበስ በጭቃማ አካባቢዎች የተለመደ የባክቴሪያ ኢንፌክሽን ነው። እንስሳውን ወደ ደረቅ ቦታ ያዛውሩ እና ከተቻለ እግሩን በንጽህና ያፅዱ።",
     "emergency": false
   },
   {
     "id": "newcastle_poultry",
     "animal": "poultry",
-    "keywords": ["twisted neck", "gasping", "coughing", "diarrhea green", "not eating", "sudden death in flock", "breathing hard", "wheezing", "green droppings"],
+    "keywords": [
+      "twisted neck",
+      "gasping",
+      "coughing",
+      "diarrhea green",
+      "sudden death in flock",
+      "breathing hard",
+      "wheezing",
+      "green droppings"
+    ],
+    "keywords_am": [
+      "አንገት ጠመመ",
+      "መተንፈስ ተቸገረ",
+      "ሳል",
+      "አረንጓዴ ተቅማጥ",
+      "በድንገት ሞት"
+    ],
     "condition": "Newcastle disease",
+    "condition_am": "የኒውካስል በሽታ",
     "advice": "This is a highly contagious viral disease with no treatment. Isolate sick birds immediately from the rest of the flock to limit spread.",
+    "advice_am": "ይህ በጣም ተላላፊ የቫይረስ በሽታ ሲሆን ምንም ዓይነት ህክምና የለውም። የተጠቁ ወፎችን ወዲያውኑ ከሌሎቹ ለይተው ያስቀምጡ።",
     "emergency": true
   },
   {
     "id": "bloat_goat",
     "animal": "goat",
-    "keywords": ["swollen belly", "not eating", "grinding teeth", "lying down repeatedly", "swollen tummy", "big belly"],
+    "keywords": [
+      "swollen belly",
+      "grinding teeth",
+      "lying down repeatedly",
+      "swollen tummy",
+      "big belly"
+    ],
+    "keywords_am": [
+      "ሆድ አበጠ",
+      "ደጋግሞ ተኛ"
+    ],
     "condition": "Bloat",
+    "condition_am": "እብጠት (ብሎት)",
     "advice": "Similar to cattle bloat — gas buildup from feed changes. Encourage movement and monitor closely; this can escalate fast.",
+    "advice_am": "ልክ እንደ ላም ሁሉ በፍየል ላይም በምግብ ለውጥ የተነሳ ጋዝ ሊከማች ይችላል። እንስሳው እንዲንቀሳቀስ ያበረታቱ እና በቅርበት ይከታተሉ፤ ሁኔታው በፍጥነት ሊባባስ ይችላል።",
     "emergency": true
   },
   {
     "id": "diarrhea_general",
     "animal": "general",
-    "keywords": ["diarrhea", "loose stool", "watery feces", "dehydration", "watery diarrhea", "loose droppings", "runny stool"],
+    "keywords": [
+      "diarrhea",
+      "loose stool",
+      "watery feces",
+      "dehydration",
+      "watery diarrhea",
+      "loose droppings",
+      "runny stool"
+    ],
+    "keywords_am": [
+      "ተቅማጥ",
+      "ላላ ሰገራ",
+      "ውሃማ ሰገራ"
+    ],
     "condition": "Diarrhea / possible parasites or infection",
+    "condition_am": "ተቅማጥ",
     "advice": "Ensure the animal has access to clean water to prevent dehydration. Persistent diarrhea over 2 days needs a vet check for parasites or infection.",
+    "advice_am": "እንስሳው ንጹህ ውሃ እንዲያገኝ ያድርጉ ስለዚህ ድርቀት እንዳይከሰት። ተቅማጡ ከሁለት ቀን በላይ ከቀጠለ የእንስሳት ሐኪም ያማክሩ።",
     "emergency": false
   },
   {
     "id": "worms_general",
     "animal": "general",
-    "keywords": ["weight loss", "pale gums", "rough coat", "pot belly", "weak", "thin despite eating", "anemia"],
+    "keywords": [
+      "weight loss",
+      "pale gums",
+      "rough coat",
+      "pot belly",
+      "weak",
+      "thin despite eating",
+      "anemia"
+    ],
+    "keywords_am": [
+      "ክብደት ቀነሰ",
+      "ገርጣ ድድ",
+      "ደካማ ፀጉር",
+      "ደካማ"
+    ],
     "condition": "Internal parasites (worms)",
+    "condition_am": "የውስጥ ጥገኛ ትሎች",
     "advice": "These are classic signs of worm burden. Pale gums especially need attention soon, as heavy worm loads can be dangerous. A dewormer and vet check are recommended.",
+    "advice_am": "እነዚህ የትል ጫና ምልክቶች ናቸው። በተለይ ገርጣ ድድ ትኩረት ይሻል፤ ትል የሚያስወግድ መድሃኒት እና የእንስሳት ሐኪም ምክር ይመከራል።",
     "emergency": false
   },
   {
     "id": "pneumonia_general",
     "animal": "general",
-    "keywords": ["coughing", "fast breathing", "nasal discharge", "fever", "lethargic", "not moving much", "runny nose", "labored breathing"],
+    "keywords": [
+      "coughing",
+      "fast breathing",
+      "nasal discharge",
+      "fever",
+      "lethargic",
+      "not moving much",
+      "runny nose",
+      "labored breathing"
+    ],
+    "keywords_am": [
+      "ሳል",
+      "ፈጣን መተንፈስ",
+      "የአፍንጫ ፈሳሽ",
+      "ደካማ"
+    ],
     "condition": "Pneumonia / respiratory infection",
+    "condition_am": "የሳምባ ምች",
     "advice": "Fast or labored breathing combined with discharge and lethargy needs prompt attention — respiratory infections can worsen quickly, especially in young animals.",
+    "advice_am": "ፈጣን መተንፈስ ከፈሳሽ እና ከድካም ጋር ተዳምሮ ፈጣን ትኩረት ይፈልጋል፤ የሳምባ ኢንፌክሽኖች በፍጥነት ሊባባሱ ይችላሉ በተለይ በወጣት እንስሳት ላይ።",
     "emergency": true
   },
   {
     "id": "eye_infection_general",
     "animal": "general",
-    "keywords": ["watery eyes", "cloudy eye", "swollen eye", "eye discharge", "closed eye", "red eye"],
+    "keywords": [
+      "watery eyes",
+      "cloudy eye",
+      "swollen eye",
+      "eye discharge",
+      "closed eye",
+      "red eye"
+    ],
+    "keywords_am": [
+      "ዓይን አለቀሰ",
+      "ደመናማ ዓይን",
+      "ዓይን አበጠ"
+    ],
     "condition": "Eye infection (e.g. pink eye)",
+    "condition_am": "የዓይን ኢንፌክሽን",
     "advice": "Keep the animal away from dust and flies, which worsen eye infections. Gently clean discharge with clean water. If cloudiness affects vision, see a vet soon.",
+    "advice_am": "እንስሳውን ከአቧራ እና ከዝንብ ያርቁ፤ ፈሳሹን በንጹህ ውሃ በቀስታ ያፅዱ። እይታ ላይ ተጽዕኖ ካሳደረ በፍጥነት የእንስሳት ሐኪም ይመልከቱ።",
     "emergency": false
   },
   {
     "id": "difficulty_birthing",
     "animal": "general",
-    "keywords": ["straining to give birth", "stuck labor", "difficult birth", "not progressing labor", "prolonged labor"],
+    "keywords": [
+      "straining to give birth",
+      "stuck labor",
+      "difficult birth",
+      "not progressing labor",
+      "prolonged labor"
+    ],
+    "keywords_am": [
+      "ምጥ ረዘመ",
+      "መውለድ ተቸገረ"
+    ],
     "condition": "Dystocia (birthing difficulty)",
+    "condition_am": "የወሊድ ችግር",
     "advice": "A prolonged or stuck birth is dangerous for both mother and offspring and needs immediate hands-on help — this is not something to wait out.",
+    "advice_am": "የተራዘመ ምጥ ለእናትና ለግልገሉ አደገኛ ነው፤ ወዲያውኑ የባለሙያ እርዳታ ያስፈልጋል።",
     "emergency": true
   },
   {
     "id": "poultry_egg_drop",
     "animal": "poultry",
-    "keywords": ["fewer eggs", "stopped laying", "soft shell eggs", "no eggs"],
+    "keywords": [
+      "fewer eggs",
+      "stopped laying",
+      "soft shell eggs",
+      "no eggs"
+    ],
+    "keywords_am": [
+      "እንቁላል ቀነሰ",
+      "መጣል አቆመ"
+    ],
     "condition": "Egg production drop (nutrition or stress related)",
+    "condition_am": "የእንቁላል ምርት መቀነስ",
     "advice": "Sudden drops in egg laying are often linked to diet, heat stress, or lighting changes. Check feed quality and water access first.",
+    "advice_am": "ድንገተኛ የእንቁላል ምርት መቀነስ ብዙውን ጊዜ ከምግብ፣ ከሙቀት ወይም ከብርሃን ለውጥ ጋር ይያያዛል። መጀመሪያ ምግብና ውሃ ያረጋግጡ።",
     "emergency": false
   },
   {
     "id": "tick_infestation",
     "animal": "general",
-    "keywords": ["ticks", "skin irritation", "scratching", "hair loss patches", "biting insects"],
+    "keywords": [
+      "ticks",
+      "skin irritation",
+      "scratching",
+      "hair loss patches",
+      "biting insects"
+    ],
+    "keywords_am": [
+      "መዥገር",
+      "ቆዳ ማከክ",
+      "ፀጉር መርገፍ"
+    ],
     "condition": "External parasites (ticks/mites)",
+    "condition_am": "የቁንጫ/መዥገር ወረራ",
     "advice": "Visible ticks or mite-related skin irritation should be treated promptly, as they can spread disease and cause anemia in heavy infestations.",
+    "advice_am": "የሚታዩ መዥገሮች ወይም ተያያዥ የቆዳ መቆጣት በፍጥነት መታከም አለባቸው፤ ካልታከሙ በሽታ ሊያስተላልፉ እና የደም ማነስ ሊያስከትሉ ይችላሉ።",
     "emergency": false
   }
 ]
