@@ -40,7 +40,10 @@ No internet connection needed after setup — the model and app run fully local.
 
 ## Demo
 
-*[Add a screenshot or short GIF of the app running here]*
+*[<img width="1920" height="1080" alt="Screenshot (95)" src="https://github.com/user-attachments/assets/8475cfac-0b25-4a18-8c51-656d419055d3" />
+]
+
+*
 
 ## Status
 
