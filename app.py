@@ -13,7 +13,7 @@ Run with: streamlit run app.py
 import streamlit as st
 import uuid
 from datetime import date, datetime
-from app_core import load_knowledge_base, get_response, get_daily_tip, analyze_image
+from app_core import load_knowledge_base, get_response, get_daily_tip, analyze_image, transcribe_audio
 from storage import (
     load_reminders, save_reminders,
     load_sessions, save_sessions,
@@ -304,12 +304,47 @@ if page == "Chat":
                 photo_symptom_request = description
                 st.caption(f"Detected: *{description}*")
 
+    # --- Voice input (optional alternative to typing) ---
+    with st.expander("🎤 Describe Symptoms by Voice / በድምጽ ይግለጹ"):
+        st.caption(
+            "Speak your symptom description instead of typing. Transcription runs "
+            "fully offline. Amharic accuracy is still being tested - if it comes out "
+            "wrong, try English or type instead."
+        )
+        voice_symptom_request = None
+        whisper_lang = "am" if language_code == "Amharic" else "en"
+
+        if hasattr(st, "audio_input"):
+            audio_data = st.audio_input("Record your description", label_visibility="collapsed")
+            if audio_data is not None:
+                if st.button("📝 Transcribe Recording"):
+                    with st.spinner("Transcribing... / ድምጽ በመተርጎም ላይ..."):
+                        transcript = transcribe_audio(audio_data.getvalue(), language_hint=whisper_lang)
+                    voice_symptom_request = transcript
+                    st.caption(f"Transcribed: *{transcript}*")
+        else:
+            # Fallback for older Streamlit versions without built-in mic recording:
+            # accept an audio file recorded elsewhere (e.g. phone voice memo).
+            st.caption("Your Streamlit version doesn't support live mic recording - upload an audio file instead.")
+            uploaded_audio = st.file_uploader(
+                "Upload audio file", type=["wav", "mp3", "m4a", "ogg"], label_visibility="collapsed"
+            )
+            if uploaded_audio is not None and st.button("📝 Transcribe Audio File"):
+                with st.spinner("Transcribing... / ድምጽ በመተርጎም ላይ..."):
+                    transcript = transcribe_audio(uploaded_audio.getvalue(), language_hint=whisper_lang)
+                voice_symptom_request = transcript
+                st.caption(f"Transcribed: *{transcript}*")
+
     typed_input = st.chat_input("Describe the symptom you're seeing... / ምልክቱን ይግለጹ...")
     from_photo = False
+    from_voice = False
     user_input = typed_input or quick_pick
     if not user_input and photo_symptom_request:
         user_input = photo_symptom_request
         from_photo = True
+    elif not user_input and voice_symptom_request:
+        user_input = voice_symptom_request
+        from_voice = True
 
     if user_input:
         full_symptom_text = f"[{animal_type}] {user_input}"
@@ -327,6 +362,8 @@ if page == "Chat":
         display_user_text = user_input
         if from_photo:
             display_user_text = f"📷 *Photo shows:* {user_input}"
+        elif from_voice:
+            display_user_text = f"🎤 *Voice:* {user_input}"
         if animal_info_str:
             display_user_text = f"*{animal_info_str}*\n\n{display_user_text}"
 

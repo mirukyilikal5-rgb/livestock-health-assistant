@@ -263,6 +263,47 @@ def analyze_image(image_bytes, animal_type=None):
     return clean_response(response["message"]["content"], max_sentences=1)
 
 
+_whisper_model = None
+
+
+def _get_whisper_model():
+    """
+    Lazily loads the Whisper model once and reuses it across calls (loading
+    is slow, so we don't want to repeat it on every transcription).
+    Uses the 'tiny' model - smallest/fastest, runs fine on CPU. Quality on
+    Amharic is UNVERIFIED and should be tested directly before relying on it.
+    """
+    global _whisper_model
+    if _whisper_model is None:
+        from faster_whisper import WhisperModel
+        _whisper_model = WhisperModel("tiny", device="cpu", compute_type="int8")
+    return _whisper_model
+
+
+def transcribe_audio(audio_bytes, language_hint=None):
+    """
+    Offline speech-to-text - runs entirely locally via faster-whisper.
+    language_hint: 'en' or 'am' to help the model, or None to auto-detect.
+    Returns the transcribed text as a plain string.
+    """
+    import tempfile
+    import os
+
+    model = _get_whisper_model()
+
+    with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
+        tmp.write(audio_bytes)
+        tmp_path = tmp.name
+
+    try:
+        segments, _info = model.transcribe(tmp_path, language=language_hint)
+        text = " ".join(segment.text for segment in segments).strip()
+    finally:
+        os.remove(tmp_path)
+
+    return text
+
+
 def get_response(symptom_text, knowledge_base, language="English", animal_info=None):
     """
     Full pipeline. For a matched condition: a short live-AI opener sentence
