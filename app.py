@@ -13,7 +13,7 @@ Run with: streamlit run app.py
 import streamlit as st
 import uuid
 from datetime import date, datetime
-from app_core import load_knowledge_base, get_response
+from app_core import load_knowledge_base, get_response, get_daily_tip, analyze_image
 from storage import (
     load_reminders, save_reminders,
     load_sessions, save_sessions,
@@ -51,8 +51,8 @@ st.markdown("""
         border-right: 1px solid #E7ECEB;
     }
     /* Flat, list-style buttons - no box, no border, just a hover highlight */
-    section[data-testid="stSidebar"] button,
-    div[data-testid="stSidebar"] button {
+    section[data-testid="stSidebar"] div[data-testid="stButton"] button,
+    div[data-testid="stSidebar"] div[data-testid="stButton"] button {
         background-color: transparent !important;
         border: none !important;
         box-shadow: none !important;
@@ -68,23 +68,23 @@ st.markdown("""
         align-items: center !important;
         justify-content: flex-start !important;
     }
-    section[data-testid="stSidebar"] button > div,
-    div[data-testid="stSidebar"] button > div,
-    section[data-testid="stSidebar"] button p,
-    div[data-testid="stSidebar"] button p {
+    section[data-testid="stSidebar"] div[data-testid="stButton"] button > div,
+    div[data-testid="stSidebar"] div[data-testid="stButton"] button > div,
+    section[data-testid="stSidebar"] div[data-testid="stButton"] button p,
+    div[data-testid="stSidebar"] div[data-testid="stButton"] button p {
         text-align: left !important;
         justify-content: flex-start !important;
         width: 100% !important;
     }
-    section[data-testid="stSidebar"] button:hover,
-    div[data-testid="stSidebar"] button:hover {
+    section[data-testid="stSidebar"] div[data-testid="stButton"] button:hover,
+    div[data-testid="stSidebar"] div[data-testid="stButton"] button:hover {
         background-color: #EDEFEF !important;
         color: #1A2E2A !important;
     }
-    section[data-testid="stSidebar"] button:focus,
-    div[data-testid="stSidebar"] button:focus,
-    section[data-testid="stSidebar"] button:active,
-    div[data-testid="stSidebar"] button:active {
+    section[data-testid="stSidebar"] div[data-testid="stButton"] button:focus,
+    div[data-testid="stSidebar"] div[data-testid="stButton"] button:focus,
+    section[data-testid="stSidebar"] div[data-testid="stButton"] button:active,
+    div[data-testid="stSidebar"] div[data-testid="stButton"] button:active {
         box-shadow: none !important;
         outline: none !important;
         border: none !important;
@@ -200,6 +200,12 @@ if page == "Chat":
         ["Cattle (ላም)", "Goat (ፍየል)", "Poultry (ዶሮ)", "Other / Not sure (ሌላ)"],
         label_visibility="collapsed",
     )
+
+    with st.sidebar.expander("+ Add age, sex, weight (optional)"):
+        animal_age = st.text_input("Age", placeholder="e.g. 2 years")
+        animal_sex = st.selectbox("Sex", ["", "Female", "Male"])
+        animal_weight = st.text_input("Weight (optional)", placeholder="e.g. 250 kg")
+
     response_language = st.sidebar.radio(
         "🌐 Response language / የምላሽ ቋንቋ", ["English", "Amharic (አማርኛ)"],
     )
@@ -255,6 +261,8 @@ st.markdown("""
 
 # ------------------------------ CHAT PAGE ------------------------------
 if page == "Chat":
+    st.info(f"💡 **Daily Tip:** {get_daily_tip(language_code)}")
+
     QUICK_SYMPTOMS = [
         ("🫃 Swollen belly", "belly is swollen and it won't eat"),
         ("🦵 Limping", "limping and bad smell from its foot"),
@@ -276,20 +284,63 @@ if page == "Chat":
         with st.chat_message(role):
             st.markdown(text)
 
+    # --- Photo upload (optional alternative to typing) ---
+    with st.expander("📷 Upload Animal Photo / የእንስሳ ፎቶ ይላኩ"):
+        st.caption(
+            "Useful for eye problems, skin issues, wounds, or swelling. "
+            "The photo is only described, never diagnosed directly — the description "
+            "still goes through the same safety-checked knowledge base as typed symptoms."
+        )
+        uploaded_photo = st.file_uploader(
+            "Choose a photo", type=["jpg", "jpeg", "png"], label_visibility="collapsed"
+        )
+        photo_symptom_request = None
+        if uploaded_photo is not None:
+            st.image(uploaded_photo, width=250)
+            if st.button("🔍 Analyze Photo"):
+                with st.spinner("Looking at the photo... / ፎቶውን በመመልከት ላይ..."):
+                    image_bytes = uploaded_photo.getvalue()
+                    description = analyze_image(image_bytes, animal_type=animal_type)
+                photo_symptom_request = description
+                st.caption(f"Detected: *{description}*")
+
     typed_input = st.chat_input("Describe the symptom you're seeing... / ምልክቱን ይግለጹ...")
+    from_photo = False
     user_input = typed_input or quick_pick
+    if not user_input and photo_symptom_request:
+        user_input = photo_symptom_request
+        from_photo = True
 
     if user_input:
         full_symptom_text = f"[{animal_type}] {user_input}"
 
-        add_message_to_current_session("user", user_input)
+        # Build a readable animal-info line if any optional fields were filled in
+        info_bits = []
+        if animal_age:
+            info_bits.append(f"📅 Age: {animal_age}")
+        if animal_sex:
+            info_bits.append(f"⚥ Sex: {animal_sex}")
+        if animal_weight:
+            info_bits.append(f"⚖️ Weight: {animal_weight}")
+        animal_info_str = "  |  ".join(info_bits) if info_bits else None
+
+        display_user_text = user_input
+        if from_photo:
+            display_user_text = f"📷 *Photo shows:* {user_input}"
+        if animal_info_str:
+            display_user_text = f"*{animal_info_str}*\n\n{display_user_text}"
+
+        add_message_to_current_session("user", display_user_text)
         with st.chat_message("user"):
-            st.markdown(user_input)
+            st.markdown(display_user_text)
 
         with st.chat_message("assistant"):
             with st.spinner("Checking... / በመፈተሽ ላይ..."):
-                answer = get_response(full_symptom_text, st.session_state.kb, language=language_code)
-            if answer.startswith("EMERGENCY") or answer.startswith("አደጋ"):
+                answer = get_response(
+                    full_symptom_text, st.session_state.kb,
+                    language=language_code, animal_info=animal_info_str,
+                )
+            if "EMERGENCY" in answer or "አደጋ" in answer:
                 st.error(answer)
             else:
                 st.markdown(answer)

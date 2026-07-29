@@ -20,7 +20,49 @@
     "condition_am": "እብጠት (ብሎት)",
     "advice": "Bloat is a buildup of gas in the stomach, often from eating too much fresh legume feed. Keep the animal standing and walking if possible. This can become an emergency quickly.",
     "advice_am": "እብጠት በተለምዶ ትኩስ የቤጓ ዓይነት ምግብ በብዛት ከመመገብ የሚመጣ የጋዝ መከማቸት ነው። እንስሳው ቆሞ እንዲንቀሳቀስ ያድርጉ እና በተቻለ ፍጥነት የእንስሳት ሐኪም ያማክሩ፣ ሁኔታው በፍጥነት ወደ አደጋ ሊቀየር ይችላል።",
-    "emergency": true
+    "emergency": true,
+    "causes": [
+      "Eating too much fresh legume feed",
+      "Sudden change in diet",
+      "Blocked digestive gas release"
+    ],
+    "actions": [
+      "Keep the animal standing and moving",
+      "Remove access to legume-heavy feed",
+      "Do not leave the animal lying down"
+    ],
+    "warning_signs": [
+      "Extreme distress or collapse",
+      "Very hard, tight belly",
+      "Difficulty breathing"
+    ],
+    "recommendation": "Contact a veterinarian immediately - bloat can become life-threatening within hours.",
+    "follow_up_questions": [
+      "How long has the belly been swollen?",
+      "Has the animal recently changed feed?",
+      "Is it able to stand and walk?"
+    ],
+    "causes_am": [
+      "ብዙ ትኩስ የቤጓ ዓይነት ምግብ መመገብ",
+      "ድንገተኛ የምግብ ለውጥ",
+      "ጋዝ በትክክል አለመውጣት"
+    ],
+    "actions_am": [
+      "እንስሳው ቆሞ እንዲንቀሳቀስ ያድርጉ",
+      "የቤጓ ዓይነት ምግብ ያስወግዱ",
+      "እንስሳው እንዲተኛ አይፍቀዱ"
+    ],
+    "warning_signs_am": [
+      "ከባድ መዳከም ወይም መውደቅ",
+      "በጣም ጠንካራ ሆድ",
+      "የመተንፈስ ችግር"
+    ],
+    "recommendation_am": "ወዲያውኑ የእንስሳት ሐኪም ያነጋግሩ - እብጠት በሰዓታት ውስጥ ለሕይወት አስጊ ሊሆን ይችላል።",
+    "follow_up_questions_am": [
+      "ሆዱ ካበጠ ስንት ጊዜ ሆነው?",
+      "በቅርቡ ምግብ ተቀይሮ ነበር?",
+      "መቆም እና መንቀሳቀስ ይችላል?"
+    ]
   },
   {
     "id": "mastitis_cattle",
@@ -45,7 +87,49 @@
     "condition_am": "የጡት እጢ በሽታ (ማስቲትስ)",
     "advice": "Mastitis is an udder infection. Gently milk out the affected quarter and keep the area clean. Recovery is much better with early treatment.",
     "advice_am": "ማስቲትስ በጡት ውስጥ የሚከሰት ኢንፌክሽን ነው። የተጎዳውን ክፍል በቀስታ ያልቡ እና አካባቢውን ንጹህ ያድርጉ፤ ቀደም ብሎ ማከም ማገገሚያውን ያፋጥናል።",
-    "emergency": false
+    "emergency": false,
+    "causes": [
+      "Bacterial infection entering through the teat",
+      "Poor milking hygiene",
+      "Injury to the udder"
+    ],
+    "actions": [
+      "Milk out the affected quarter gently",
+      "Keep the udder area clean and dry",
+      "Separate calf from nursing that quarter if needed"
+    ],
+    "warning_signs": [
+      "Blood or pus in milk",
+      "Fever or the cow stops eating",
+      "Udder becomes very hard or hot"
+    ],
+    "recommendation": "See a veterinarian for antibiotic treatment if symptoms don't improve within 1-2 days.",
+    "follow_up_questions": [
+      "Which quarter of the udder is affected?",
+      "Has the milk changed in color or texture?",
+      "Is the cow still eating normally?"
+    ],
+    "causes_am": [
+      "በጡት ጫፍ በኩል የሚገባ ባክቴሪያ",
+      "ደካማ የወተት አመራረት ንጽህና",
+      "በጡት ላይ ጉዳት"
+    ],
+    "actions_am": [
+      "የተጎዳውን ክፍል በቀስታ ያልቡ",
+      "የጡት አካባቢን ንጹህ እና ደረቅ ያድርጉ",
+      "አስፈላጊ ከሆነ ጥጃውን ከዚያ ጡት ያርቁ"
+    ],
+    "warning_signs_am": [
+      "በወተት ውስጥ ደም ወይም መግል",
+      "ትኩሳት ወይም አለመብላት",
+      "ጡት በጣም ጠንካራ ወይም ሞቃት መሆን"
+    ],
+    "recommendation_am": "ሁኔታው በ1-2 ቀን ውስጥ ካልተሻሻለ የእንስሳት ሐኪም ያማክሩ።",
+    "follow_up_questions_am": [
+      "የትኛው የጡት ክፍል ነው የተጎዳው?",
+      "የወተቱ ቀለም ወይም ይዘት ተቀይሯል?",
+      "ላሟ አሁንም በመደበኛነት እየበላች ነው?"
+    ]
   },
   {
     "id": "foot_rot_cattle",
@@ -69,7 +153,49 @@
     "condition_am": "የእግር መበስበስ",
     "advice": "Foot rot is a bacterial infection between the toes, common in wet or muddy conditions. Move the animal to a dry area and clean the foot if possible.",
     "advice_am": "የእግር መበስበስ በጭቃማ አካባቢዎች የተለመደ የባክቴሪያ ኢንፌክሽን ነው። እንስሳውን ወደ ደረቅ ቦታ ያዛውሩ እና ከተቻለ እግሩን በንጽህና ያፅዱ።",
-    "emergency": false
+    "emergency": false,
+    "causes": [
+      "Bacterial infection between the toes",
+      "Prolonged exposure to wet or muddy ground",
+      "Untreated small foot injuries"
+    ],
+    "actions": [
+      "Move the animal to dry ground",
+      "Clean the affected foot carefully",
+      "Keep the area free of mud and manure"
+    ],
+    "warning_signs": [
+      "Foot swelling spreads up the leg",
+      "Animal refuses to bear any weight",
+      "Strong foul odor with discharge"
+    ],
+    "recommendation": "If limping continues beyond a few days, consult a veterinarian for antibiotic treatment.",
+    "follow_up_questions": [
+      "Which foot is affected?",
+      "Has the animal been in wet or muddy conditions recently?",
+      "Is there any visible wound or discharge?"
+    ],
+    "causes_am": [
+      "በጣቶች መካከል ያለ ባክቴሪያ ኢንፌክሽን",
+      "ለረጅም ጊዜ በጭቃ ውስጥ መቆየት",
+      "ያልታከመ ትንሽ የእግር ጉዳት"
+    ],
+    "actions_am": [
+      "እንስሳውን ወደ ደረቅ ቦታ ያዛውሩ",
+      "የተጎዳውን እግር በጥንቃቄ ያፅዱ",
+      "አካባቢውን ከጭቃ እና ከፍግ ነጻ ያድርጉ"
+    ],
+    "warning_signs_am": [
+      "እብጠቱ ወደ እግሩ ላይኛው ክፍል መስፋፋት",
+      "እንስሳው እግሩን መጠቀም አለመቻል",
+      "ከፈሳሽ ጋር ኃይለኛ መጥፎ ሽታ"
+    ],
+    "recommendation_am": "አንካሳነቱ ከጥቂት ቀናት በላይ ከቀጠለ የእንስሳት ሐኪም ያማክሩ።",
+    "follow_up_questions_am": [
+      "የትኛው እግር ነው የተጎዳው?",
+      "በቅርቡ በጭቃማ ቦታ ነበር?",
+      "የሚታይ ቁስል ወይም ፈሳሽ አለ?"
+    ]
   },
   {
     "id": "newcastle_poultry",
@@ -95,7 +221,49 @@
     "condition_am": "የኒውካስል በሽታ",
     "advice": "This is a highly contagious viral disease with no treatment. Isolate sick birds immediately from the rest of the flock to limit spread.",
     "advice_am": "ይህ በጣም ተላላፊ የቫይረስ በሽታ ሲሆን ምንም ዓይነት ህክምና የለውም። የተጠቁ ወፎችን ወዲያውኑ ከሌሎቹ ለይተው ያስቀምጡ።",
-    "emergency": true
+    "emergency": true,
+    "causes": [
+      "Highly contagious viral infection",
+      "Spread from other infected birds",
+      "Poor flock biosecurity"
+    ],
+    "actions": [
+      "Isolate sick birds immediately",
+      "Disinfect coops and equipment",
+      "Restrict movement of birds and visitors"
+    ],
+    "warning_signs": [
+      "Multiple birds dying suddenly",
+      "Green diarrhea across the flock",
+      "Complete stop in egg production"
+    ],
+    "recommendation": "Contact an avian veterinarian or agricultural extension office immediately - there is no cure, only containment.",
+    "follow_up_questions": [
+      "How many birds are affected?",
+      "Have any new birds joined the flock recently?",
+      "Are the birds vaccinated?"
+    ],
+    "causes_am": [
+      "በጣም ተላላፊ የቫይረስ በሽታ",
+      "ከሌሎች የተያዙ ወፎች መተላለፍ",
+      "ደካማ የመንጋ ደህንነት አጠባበቅ"
+    ],
+    "actions_am": [
+      "የታመሙ ወፎችን ወዲያውኑ ለዩ",
+      "ጎጆዎችን እና እቃዎችን ማጽዳት",
+      "የወፎችን እና የጎብኚዎችን እንቅስቃሴ ይገድቡ"
+    ],
+    "warning_signs_am": [
+      "ብዙ ወፎች በድንገት መሞት",
+      "በመንጋው ውስጥ አረንጓዴ ተቅማጥ",
+      "የእንቁላል ምርት ሙሉ በሙሉ መቆም"
+    ],
+    "recommendation_am": "ወዲያውኑ የእንስሳት ሐኪም ወይም የግብርና ጽ/ቤት ያነጋግሩ - ፈውስ የለውም፣ ብቻ መቆጣጠር ይቻላል።",
+    "follow_up_questions_am": [
+      "ስንት ወፎች ተጎድተዋል?",
+      "በቅርቡ አዲስ ወፍ ወደ መንጋው ገብቷል?",
+      "ወፎቹ ክትባት ወስደዋል?"
+    ]
   },
   {
     "id": "bloat_goat",
@@ -115,7 +283,49 @@
     "condition_am": "እብጠት (ብሎት)",
     "advice": "Similar to cattle bloat — gas buildup from feed changes. Encourage movement and monitor closely; this can escalate fast.",
     "advice_am": "ልክ እንደ ላም ሁሉ በፍየል ላይም በምግብ ለውጥ የተነሳ ጋዝ ሊከማች ይችላል። እንስሳው እንዲንቀሳቀስ ያበረታቱ እና በቅርበት ይከታተሉ፤ ሁኔታው በፍጥነት ሊባባስ ይችላል።",
-    "emergency": true
+    "emergency": true,
+    "causes": [
+      "Sudden feed change",
+      "Eating too much fresh legume feed",
+      "Gas buildup from digestion"
+    ],
+    "actions": [
+      "Encourage the goat to stand and move",
+      "Remove rich or wet feed",
+      "Do not let it lie down and stay still"
+    ],
+    "warning_signs": [
+      "Severe distress or collapse",
+      "Very tight, hard belly",
+      "Struggling to breathe"
+    ],
+    "recommendation": "This can escalate quickly - contact a veterinarian right away if there's no improvement.",
+    "follow_up_questions": [
+      "How long has the belly been swollen?",
+      "Was there a recent feed change?",
+      "Can the goat still stand?"
+    ],
+    "causes_am": [
+      "ድንገተኛ የምግብ ለውጥ",
+      "ብዙ ትኩስ የቤጓ ዓይነት ምግብ መመገብ",
+      "ከምግብ መፈጨት የሚመጣ ጋዝ"
+    ],
+    "actions_am": [
+      "ፍየሏ እንድትቆም እና እንድትንቀሳቀስ ያበረታቱ",
+      "የበለጸገ ወይም እርጥብ ምግብ ያስወግዱ",
+      "እንድትተኛ እና ፀጥ እንድትል አይፍቀዱ"
+    ],
+    "warning_signs_am": [
+      "ከባድ መዳከም ወይም መውደቅ",
+      "በጣም ጠንካራ ሆድ",
+      "የመተንፈስ ችግር"
+    ],
+    "recommendation_am": "ሁኔታው በፍጥነት ሊባባስ ይችላል - መሻሻል ከሌለ ወዲያውኑ የእንስሳት ሐኪም ያነጋግሩ።",
+    "follow_up_questions_am": [
+      "ሆዱ ካበጠ ስንት ጊዜ ሆነው?",
+      "በቅርቡ የምግብ ለውጥ ነበር?",
+      "ፍየሏ አሁንም መቆም ትችላለች?"
+    ]
   },
   {
     "id": "diarrhea_general",
@@ -138,7 +348,51 @@
     "condition_am": "ተቅማጥ",
     "advice": "Ensure the animal has access to clean water to prevent dehydration. Persistent diarrhea over 2 days needs a vet check for parasites or infection.",
     "advice_am": "እንስሳው ንጹህ ውሃ እንዲያገኝ ያድርጉ ስለዚህ ድርቀት እንዳይከሰት። ተቅማጡ ከሁለት ቀን በላይ ከቀጠለ የእንስሳት ሐኪም ያማክሩ።",
-    "emergency": false
+    "emergency": false,
+    "causes": [
+      "Internal parasites",
+      "Bacterial or viral infection",
+      "Sudden feed or water change"
+    ],
+    "actions": [
+      "Ensure constant access to clean water",
+      "Keep the animal in a clean, dry area",
+      "Monitor how often and how watery the stool is"
+    ],
+    "warning_signs": [
+      "Blood in the stool",
+      "Signs of severe dehydration (sunken eyes, weakness)",
+      "Diarrhea lasting more than 2 days"
+    ],
+    "recommendation": "If diarrhea continues past 2 days or blood appears, contact a veterinarian for testing and treatment.",
+    "follow_up_questions": [
+      "How old is the animal?",
+      "Is there blood in the stool?",
+      "Is the animal still eating and drinking?",
+      "Does it have a fever?"
+    ],
+    "causes_am": [
+      "የውስጥ ጥገኛ ትሎች",
+      "የባክቴሪያ ወይም የቫይረስ ኢንፌክሽን",
+      "ድንገተኛ የምግብ ወይም የውሃ ለውጥ"
+    ],
+    "actions_am": [
+      "ንጹህ ውሃ ሁልጊዜ እንዲያገኝ ያድርጉ",
+      "እንስሳውን ንጹህ እና ደረቅ ቦታ ያቆዩ",
+      "የሰገራውን ድግግሞሽ እና ውሃማነት ይከታተሉ"
+    ],
+    "warning_signs_am": [
+      "በሰገራ ውስጥ ደም",
+      "ከባድ የድርቀት ምልክቶች (የገባ አይን፣ ድካም)",
+      "ከ2 ቀን በላይ የቀጠለ ተቅማጥ"
+    ],
+    "recommendation_am": "ተቅማጡ ከ2 ቀን በላይ ከቀጠለ ወይም ደም ከታየ የእንስሳት ሐኪም ያማክሩ።",
+    "follow_up_questions_am": [
+      "እንስሳው ዕድሜው ስንት ነው?",
+      "በሰገራ ውስጥ ደም አለ?",
+      "እንስሳው አሁንም እየበላና እየጠጣ ነው?",
+      "ትኩሳት አለው?"
+    ]
   },
   {
     "id": "worms_general",
@@ -162,7 +416,49 @@
     "condition_am": "የውስጥ ጥገኛ ትሎች",
     "advice": "These are classic signs of worm burden. Pale gums especially need attention soon, as heavy worm loads can be dangerous. A dewormer and vet check are recommended.",
     "advice_am": "እነዚህ የትል ጫና ምልክቶች ናቸው። በተለይ ገርጣ ድድ ትኩረት ይሻል፤ ትል የሚያስወግድ መድሃኒት እና የእንስሳት ሐኪም ምክር ይመከራል።",
-    "emergency": false
+    "emergency": false,
+    "causes": [
+      "Heavy internal parasite (worm) burden",
+      "Contaminated grazing land",
+      "Poor deworming schedule"
+    ],
+    "actions": [
+      "Start a deworming treatment",
+      "Improve pasture rotation if possible",
+      "Provide extra nutrition to support recovery"
+    ],
+    "warning_signs": [
+      "Very pale gums (sign of anemia)",
+      "Severe weight loss despite eating",
+      "Swelling under the jaw (bottle jaw)"
+    ],
+    "recommendation": "Consult a veterinarian for proper deworming dosage - heavy worm loads can be dangerous if untreated.",
+    "follow_up_questions": [
+      "When was the animal last dewormed?",
+      "How pale are the gums?",
+      "Is there swelling under the jaw?"
+    ],
+    "causes_am": [
+      "ከባድ የውስጥ ጥገኛ ትል ጫና",
+      "የተበከለ የግጦሽ መሬት",
+      "ደካማ የትል መድሃኒት አሰጣጥ ልማድ"
+    ],
+    "actions_am": [
+      "የትል መድሃኒት ሕክምና ይጀምሩ",
+      "ከተቻለ የግጦሽ ማሽከርከር ያሻሽሉ",
+      "ለማገገም ተጨማሪ ምግብ ያቅርቡ"
+    ],
+    "warning_signs_am": [
+      "በጣም ገርጣ ድድ (የደም ማነስ ምልክት)",
+      "ቢበላም ከባድ ክብደት መቀነስ",
+      "ከመንጋጋ በታች እብጠት"
+    ],
+    "recommendation_am": "ትክክለኛውን የትል መድሃኒት መጠን ለማወቅ የእንስሳት ሐኪም ያማክሩ።",
+    "follow_up_questions_am": [
+      "እንስሳው መቼ ነው መጨረሻ ትል መድሃኒት የተሰጠው?",
+      "ድዱ ምን ያህል ገርጣ ነው?",
+      "ከመንጋጋ በታች እብጠት አለ?"
+    ]
   },
   {
     "id": "pneumonia_general",
@@ -187,7 +483,49 @@
     "condition_am": "የሳምባ ምች",
     "advice": "Fast or labored breathing combined with discharge and lethargy needs prompt attention — respiratory infections can worsen quickly, especially in young animals.",
     "advice_am": "ፈጣን መተንፈስ ከፈሳሽ እና ከድካም ጋር ተዳምሮ ፈጣን ትኩረት ይፈልጋል፤ የሳምባ ኢንፌክሽኖች በፍጥነት ሊባባሱ ይችላሉ በተለይ በወጣት እንስሳት ላይ።",
-    "emergency": true
+    "emergency": true,
+    "causes": [
+      "Respiratory infection (bacterial or viral)",
+      "Sudden weather or temperature change",
+      "Poor ventilation in housing"
+    ],
+    "actions": [
+      "Move the animal to a warm, dry, well-ventilated area",
+      "Reduce stress and handling",
+      "Monitor breathing rate closely"
+    ],
+    "warning_signs": [
+      "Breathing becomes very rapid or labored",
+      "Blue or pale tinge to gums",
+      "Animal stops eating or standing"
+    ],
+    "recommendation": "Respiratory infections can worsen quickly, especially in young animals - contact a veterinarian promptly.",
+    "follow_up_questions": [
+      "How is the animal's breathing rate?",
+      "Is there nasal discharge?",
+      "How old is the animal?"
+    ],
+    "causes_am": [
+      "የመተንፈሻ አካላት ኢንፌክሽን (ባክቴሪያ ወይም ቫይረስ)",
+      "ድንገተኛ የአየር ሁኔታ ለውጥ",
+      "ደካማ የመኖሪያ አየር ዝውውር"
+    ],
+    "actions_am": [
+      "እንስሳውን ወደ ሞቃት፣ ደረቅ አየር ወደ ሚዘዋወርበት ቦታ ያዛውሩ",
+      "ጭንቀትን እና አያያዝን ይቀንሱ",
+      "የመተንፈስ ፍጥነትን በቅርበት ይከታተሉ"
+    ],
+    "warning_signs_am": [
+      "መተንፈስ በጣም ፈጣን ወይም ከባድ መሆን",
+      "ድድ ሰማያዊ ወይም ገርጣ መልክ",
+      "አለመብላት ወይም አለመቆም"
+    ],
+    "recommendation_am": "የመተንፈሻ ኢንፌክሽኖች በተለይ በወጣት እንስሳት ላይ በፍጥነት ሊባባሱ ይችላሉ - ወዲያውኑ የእንስሳት ሐኪም ያነጋግሩ።",
+    "follow_up_questions_am": [
+      "እንስሳው የመተንፈስ ፍጥነት ምን ይመስላል?",
+      "የአፍንጫ ፈሳሽ አለ?",
+      "እንስሳው ዕድሜው ስንት ነው?"
+    ]
   },
   {
     "id": "eye_infection_general",
@@ -209,7 +547,49 @@
     "condition_am": "የዓይን ኢንፌክሽን",
     "advice": "Keep the animal away from dust and flies, which worsen eye infections. Gently clean discharge with clean water. If cloudiness affects vision, see a vet soon.",
     "advice_am": "እንስሳውን ከአቧራ እና ከዝንብ ያርቁ፤ ፈሳሹን በንጹህ ውሃ በቀስታ ያፅዱ። እይታ ላይ ተጽዕኖ ካሳደረ በፍጥነት የእንስሳት ሐኪም ይመልከቱ።",
-    "emergency": false
+    "emergency": false,
+    "causes": [
+      "Bacterial infection",
+      "Dust, flies, or debris irritation",
+      "Injury to the eye"
+    ],
+    "actions": [
+      "Keep the animal away from dust and flies",
+      "Gently clean discharge with clean water",
+      "Isolate if other animals show similar signs"
+    ],
+    "warning_signs": [
+      "Vision appears affected",
+      "Eye is fully closed and won't open",
+      "Discharge becomes thick or bloody"
+    ],
+    "recommendation": "If cloudiness or discharge persists beyond a few days, see a veterinarian to prevent vision damage.",
+    "follow_up_questions": [
+      "Is one eye or both affected?",
+      "Is there discharge, and what color?",
+      "Has the animal been around dust or flies recently?"
+    ],
+    "causes_am": [
+      "የባክቴሪያ ኢንፌክሽን",
+      "አቧራ፣ ዝንብ ወይም ቆሻሻ መቆጣት",
+      "በዓይን ላይ ጉዳት"
+    ],
+    "actions_am": [
+      "እንስሳውን ከአቧራ እና ከዝንብ ያርቁ",
+      "ፈሳሹን በንጹህ ውሃ በቀስታ ያፅዱ",
+      "ሌሎች እንስሳት ተመሳሳይ ምልክት ካሳዩ ይለዩ"
+    ],
+    "warning_signs_am": [
+      "እይታ የተጎዳ መስሎ መታየት",
+      "ዓይኑ ሙሉ በሙሉ ተዘግቶ አይከፈትም",
+      "ፈሳሹ ወፍራም ወይም ደም የተቀላቀለበት መሆን"
+    ],
+    "recommendation_am": "ደመናማነት ወይም ፈሳሽ ከጥቂት ቀናት በላይ ከቀጠለ የእንስሳት ሐኪም ይመልከቱ።",
+    "follow_up_questions_am": [
+      "አንድ ዓይን ወይስ ሁለቱም ተጎድተዋል?",
+      "ፈሳሽ አለ፣ ምን ቀለም አለው?",
+      "በቅርቡ በአቧራ ወይም በዝንብ አካባቢ ነበር?"
+    ]
   },
   {
     "id": "difficulty_birthing",
@@ -229,7 +609,49 @@
     "condition_am": "የወሊድ ችግር",
     "advice": "A prolonged or stuck birth is dangerous for both mother and offspring and needs immediate hands-on help — this is not something to wait out.",
     "advice_am": "የተራዘመ ምጥ ለእናትና ለግልገሉ አደገኛ ነው፤ ወዲያውኑ የባለሙያ እርዳታ ያስፈልጋል።",
-    "emergency": true
+    "emergency": true,
+    "causes": [
+      "Abnormal position of the offspring",
+      "Offspring too large for the birth canal",
+      "Weak or prolonged labor contractions"
+    ],
+    "actions": [
+      "Keep the mother calm and in a clean, quiet space",
+      "Do not attempt to pull without guidance",
+      "Prepare to transport to a vet if possible"
+    ],
+    "warning_signs": [
+      "No progress after more than an hour of active straining",
+      "Visible distress or exhaustion in the mother",
+      "Only part of the offspring is visible and not progressing"
+    ],
+    "recommendation": "This is a time-sensitive emergency - contact a veterinarian or animal health professional immediately.",
+    "follow_up_questions": [
+      "How long has labor been going on?",
+      "Is any part of the offspring visible?",
+      "Has the mother given birth before without difficulty?"
+    ],
+    "causes_am": [
+      "ያልተለመደ የግልገል አቀማመጥ",
+      "ግልገሉ ለወሊድ ቦይ በጣም ትልቅ መሆን",
+      "ደካማ ወይም የተራዘመ የምጥ ንክኪ"
+    ],
+    "actions_am": [
+      "እናትን በጸጥታ እና በንጹህ ቦታ ያቆዩ",
+      "ያለ መመሪያ ላለመጎተት ይሞክሩ",
+      "ወደ የእንስሳት ሐኪም ለማጓጓዝ ይዘጋጁ"
+    ],
+    "warning_signs_am": [
+      "ከአንድ ሰዓት በላይ ምጥ ካለ ምንም መሻሻል",
+      "በእናትየው ላይ የሚታይ ድካም ወይም ጭንቀት",
+      "የግልገሉ ክፍል ብቻ የሚታይ እና የማይራመድ"
+    ],
+    "recommendation_am": "ይህ በጊዜ የተገደበ አደጋ ነው - ወዲያውኑ የእንስሳት ሐኪም ወይም ባለሙያ ያነጋግሩ።",
+    "follow_up_questions_am": [
+      "ምጡ ስንት ጊዜ ሆኖታል?",
+      "የግልገሉ የሆነ ክፍል ይታያል?",
+      "እናትየው ቀደም ብላ ያለችግር ወልዳ ታውቃለች?"
+    ]
   },
   {
     "id": "poultry_egg_drop",
@@ -248,7 +670,49 @@
     "condition_am": "የእንቁላል ምርት መቀነስ",
     "advice": "Sudden drops in egg laying are often linked to diet, heat stress, or lighting changes. Check feed quality and water access first.",
     "advice_am": "ድንገተኛ የእንቁላል ምርት መቀነስ ብዙውን ጊዜ ከምግብ፣ ከሙቀት ወይም ከብርሃን ለውጥ ጋር ይያያዛል። መጀመሪያ ምግብና ውሃ ያረጋግጡ።",
-    "emergency": false
+    "emergency": false,
+    "causes": [
+      "Sudden diet or feed quality change",
+      "Heat stress",
+      "Change in lighting schedule"
+    ],
+    "actions": [
+      "Check feed quality and freshness",
+      "Ensure constant access to clean water",
+      "Review recent changes in lighting or temperature"
+    ],
+    "warning_signs": [
+      "Egg drop combined with illness signs (lethargy, not eating)",
+      "Complete stop rather than gradual decline",
+      "Multiple birds affected at once"
+    ],
+    "recommendation": "If the drop continues beyond a week or is paired with other symptoms, consult a poultry specialist.",
+    "follow_up_questions": [
+      "When did egg production start dropping?",
+      "Have you changed feed recently?",
+      "Are the birds showing any other symptoms?"
+    ],
+    "causes_am": [
+      "ድንገተኛ የምግብ ወይም የምግብ ጥራት ለውጥ",
+      "የሙቀት ጭንቀት",
+      "የብርሃን መርሃ ግብር ለውጥ"
+    ],
+    "actions_am": [
+      "የምግብ ጥራት እና ትኩስነት ያረጋግጡ",
+      "ንጹህ ውሃ ሁልጊዜ እንዲያገኙ ያድርጉ",
+      "የቅርብ ጊዜ የብርሃን ወይም የሙቀት ለውጦችን ይገምግሙ"
+    ],
+    "warning_signs_am": [
+      "የእንቁላል መቀነስ ከበሽታ ምልክቶች ጋር (ድካም፣ አለመብላት)",
+      "ቀስ በቀስ ሳይሆን ሙሉ በሙሉ መቆም",
+      "ብዙ ወፎች በአንድ ጊዜ መጎዳት"
+    ],
+    "recommendation_am": "መቀነሱ ከሳምንት በላይ ከቀጠለ ወይም ከሌሎች ምልክቶች ጋር ከሆነ የዶሮ ባለሙያ ያማክሩ።",
+    "follow_up_questions_am": [
+      "እንቁላል መቀነስ የጀመረው መቼ ነው?",
+      "በቅርቡ ምግብ ቀይረዋል?",
+      "ወፎቹ ሌላ ምልክት እያሳዩ ነው?"
+    ]
   },
   {
     "id": "tick_infestation",
@@ -269,6 +733,48 @@
     "condition_am": "የቁንጫ/መዥገር ወረራ",
     "advice": "Visible ticks or mite-related skin irritation should be treated promptly, as they can spread disease and cause anemia in heavy infestations.",
     "advice_am": "የሚታዩ መዥገሮች ወይም ተያያዥ የቆዳ መቆጣት በፍጥነት መታከም አለባቸው፤ ካልታከሙ በሽታ ሊያስተላልፉ እና የደም ማነስ ሊያስከትሉ ይችላሉ።",
-    "emergency": false
+    "emergency": false,
+    "causes": [
+      "Direct contact with infested pasture or other animals",
+      "Poor grazing land management",
+      "Lack of regular tick control"
+    ],
+    "actions": [
+      "Remove visible ticks carefully",
+      "Treat with an appropriate tick control product",
+      "Check other animals in the herd/flock for ticks"
+    ],
+    "warning_signs": [
+      "Signs of anemia (pale gums, weakness)",
+      "Large areas of hair loss or skin damage",
+      "Fever or lethargy following tick exposure"
+    ],
+    "recommendation": "Heavy infestations can spread disease and cause anemia - treat promptly and consult a vet if the animal seems unwell.",
+    "follow_up_questions": [
+      "How many ticks are visible?",
+      "Is the animal showing signs of weakness or paleness?",
+      "Are other animals in the herd affected too?"
+    ],
+    "causes_am": [
+      "ከተያዘ የግጦሽ መሬት ወይም ከሌሎች እንስሳት ጋር ንክኪ",
+      "ደካማ የግጦሽ መሬት አያያዝ",
+      "መደበኛ የመዥገር መከላከል አለመኖር"
+    ],
+    "actions_am": [
+      "የሚታዩ መዥገሮችን በጥንቃቄ ያስወግዱ",
+      "ተስማሚ የመዥገር መከላከያ ምርት ይጠቀሙ",
+      "በመንጋው ውስጥ ያሉ ሌሎች እንስሳትን ይመልከቱ"
+    ],
+    "warning_signs_am": [
+      "የደም ማነስ ምልክቶች (ገርጣ ድድ፣ ድካም)",
+      "ትልቅ የፀጉር መርገፍ ወይም የቆዳ ጉዳት",
+      "ከመዥገር ንክኪ በኋላ ትኩሳት ወይም ድካም"
+    ],
+    "recommendation_am": "ከባድ ወረራ በሽታ ሊያስተላልፍ ይችላል - ወዲያውኑ ያክሙ እና እንስሳው ጤናማ ካልመሰለ የእንስሳት ሐኪም ያማክሩ።",
+    "follow_up_questions_am": [
+      "ስንት መዥገሮች ይታያሉ?",
+      "እንስሳው የድካም ወይም የገርጣነት ምልክት እያሳየ ነው?",
+      "በመንጋው ውስጥ ያሉ ሌሎች እንስሳትም ተጎድተዋል?"
+    ]
   }
 ]
