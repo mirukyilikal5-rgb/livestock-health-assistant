@@ -58,7 +58,8 @@ No internet connection is needed after setup — everything runs fully local.
 
 ## Demo
 
-*[<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e5d8236b-9059-4045-ac8e-f04eaaf327ce" />
+*[<img width="1831" height="1016" alt="Screenshot (105)" src="https://github.com/user-attachments/assets/46b0d4f0-4f26-4df9-aeaa-9f391d135a96" />
+>
 ]*
 ]
 
